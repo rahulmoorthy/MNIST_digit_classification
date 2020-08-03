@@ -1,0 +1,24 @@
+import numpy
+import torch
+import torch.nn as nn             # neural network lib.
+import torch.nn.functional as F   # common functions (e.g. relu, drop-out, softmax...)
+
+# Set default tenosr type, 'torch.cuda.FloatTensor' is the GPU based FloatTensor
+torch.set_default_tensor_type('torch.cuda.FloatTensor')
+
+class Net(torch.nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.conv1 = nn.Conv2d(1, 10, kernel_size=5)
+        self.conv2 = nn.Conv2d(10, 20, kernel_size=5)
+        self.fc1 = nn.Linear(320, 50)
+        self.fc2 = nn.Linear(50, 10)
+
+    def forward(self, x):
+        x = F.relu(F.max_pool2d(self.conv1(x), 2))
+        x = F.relu(F.max_pool2d(self.conv2(x), 2))
+        x = x.view(-1, 320)                             # Flatten the 2D features to 1D
+        x = F.relu(self.fc1(x))
+        x = F.dropout(x)
+        x = self.fc2(x)
+        return x
