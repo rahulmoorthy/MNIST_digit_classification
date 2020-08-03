@@ -2,8 +2,6 @@ import numpy
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-# Set default tenosr type, 'torch.cuda.FloatTensor' is the GPU based FloatTensor
 torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
 class Net(torch.nn.Module):
