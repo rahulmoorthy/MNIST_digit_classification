@@ -46,7 +46,7 @@ class MINSTDataset(Dataset):
         return len(self.data_list)
 
     def __getitem__(self, idx):
-        print("__getitem__ call")
+        #print("__getitem__ call")
         item = self.data_list[idx]
         label = np.asarray(item['label'])
         file_path = os.path.join(minst_dataset_dir, item['file_path'])
@@ -66,28 +66,23 @@ class MINSTDataset(Dataset):
 
 train_dataset = MINSTDataset(train_set_list)
 train_data_loader = torch.utils.data.DataLoader(train_dataset,
-                                                batch_size=128,
+                                                batch_size=64,
                                                 shuffle=True,
-                                                num_workers=6)
+                                                num_workers=0)
 print('Total training items', len(train_dataset), ', Total training mini-batches in one epoch:', len(train_data_loader))
 
 valid_set = MINSTDataset(valid_set_list)
 valid_data_loader = torch.utils.data.DataLoader(valid_set,
                                                 batch_size=32,
                                                 shuffle=True,
-                                                num_workers=6)
+                                                num_workers=0)
 print('Total validation set:', len(valid_set))
 
-#%matplotlib inline
-
-# We can visualize some dataset
+# Visulize the dataset.
 # idx, (image, label) = next(enumerate(train_data_loader))  # we can use next(*) load once.
 # print('image tensor shape (N, C, H, W):', image.shape)
 # print('label tensor shape (N, labels):', label.shape)
 #
-# for idx, (image, label) in train_data_loader:
-#     print(idx)
-
 # n_batch_size = image.shape[0]
 # channels = image.shape[1]
 # h,w = image.shape[2], image.shape[3]
@@ -101,3 +96,4 @@ print('Total validation set:', len(valid_set))
 #     axes[i].imshow(nd_img[i].reshape(h, w), cmap='gray')
 #     axes[i].set_title('Label:' + str(nd_label[i]))
 # plt.show()
+
