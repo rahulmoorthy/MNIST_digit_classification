@@ -1,1 +1,1 @@
-# Using Convolution Neural Networks (CNN) to classiy handwritten digits
+# Handwritten digit classification using convolutional neural networks (CNN)
