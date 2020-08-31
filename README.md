@@ -20,9 +20,13 @@
 ### Predictions made: 
 
 <p align="center">
-  <img src="/images/res1.JPG">
+  <img height=450 width=450 src="/images/res1.JPG">
 </p>
 
 <p align="center">
-  <img src="/images/res22.JPG">
+  <img height=450 width=450 src="/images/res2.JPG">
+</p>
+
+<p align="center">
+  <img src="/images/res2.JPG">
 </p>
