@@ -79,21 +79,21 @@ valid_data_loader = torch.utils.data.DataLoader(valid_set,
 print('Total validation set:', len(valid_set))
 
 # Visulize the dataset.
-# idx, (image, label) = next(enumerate(train_data_loader))  # we can use next(*) load once.
-# print('image tensor shape (N, C, H, W):', image.shape)
-# print('label tensor shape (N, labels):', label.shape)
-#
-# n_batch_size = image.shape[0]
-# channels = image.shape[1]
-# h,w = image.shape[2], image.shape[3]
-#
-# nd_img = image.cpu().numpy()
-# nd_label = label.cpu().numpy()
-#
-# # We show 4 examples:
-# figs, axes = plt.subplots(1, 4)
-# for i in range(0, 4):
-#     axes[i].imshow(nd_img[i].reshape(h, w), cmap='gray')
-#     axes[i].set_title('Label:' + str(nd_label[i]))
-# plt.show()
+idx, (image, label) = next(enumerate(train_data_loader))  # we can use next(*) load once.
+print('image tensor shape (N, C, H, W):', image.shape)
+print('label tensor shape (N, labels):', label.shape)
+
+n_batch_size = image.shape[0]
+channels = image.shape[1]
+h,w = image.shape[2], image.shape[3]
+
+nd_img = image.cpu().numpy()
+nd_label = label.cpu().numpy()
+
+# We show 4 examples:
+figs, axes = plt.subplots(1, 4)
+for i in range(0, 4):
+    axes[i].imshow(nd_img[i].reshape(h, w), cmap='gray')
+    axes[i].set_title('Label:' + str(nd_label[i]))
+plt.show()
 
