@@ -28,5 +28,5 @@
 </p>
 
 <p align="center">
-  <img height=400 width=400 src="/images/res2.JPG">
+  <img height=400 width=400 src="/images/res3.JPG">
 </p>
