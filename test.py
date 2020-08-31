@@ -36,5 +36,3 @@ prob_max = torch.argmax(pred.detach(), dim=1)
 plt.imshow(img, cmap='gray')
 plt.title("Predicted Label %d" % (prob_max.item()))
 plt.show()
-
-##Try to compute accuracy measure
