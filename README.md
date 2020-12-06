@@ -17,7 +17,7 @@
 </p>
 
 
-### Sample Predictions from the test set:
+### Sample predictions from the test set:
 
 <p align="center">
   <img height=400 width=400 src="/images/res1.JPG">
